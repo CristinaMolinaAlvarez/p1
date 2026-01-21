@@ -1,0 +1,13 @@
+Práctica 1 – Uso de Git y GitHub
+
+1. git clone
+Este comando se utiliza para clonar un repositorio remoto en local.
+En esta práctica, el repositorio se clonó automáticamente al crear un GitHub Codespace,
+el cual encontramos en la ruta /workspaces/p1.
+
+2. git status
+Muestra el estado del repositorio, indicando en qué rama estamos y si hay cambios pendientes.
+Obtenemos:
+On branch main
+Your branch is up to date with 'origin/main'.
+nothing to commit, working tree clean
