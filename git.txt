@@ -1,13 +1,125 @@
 Práctica 1 – Uso de Git y GitHub
+================================
+Explicación de comandos:
 
 1. git clone
-Este comando se utiliza para clonar un repositorio remoto en local.
-En esta práctica, el repositorio se clonó automáticamente al crear un GitHub Codespace,
-el cual encontramos en la ruta /workspaces/p1.
+
+El comando `git clone` se utiliza para copiar un repositorio remoto en un entorno de trabajo local.
+En esta práctica, el repositorio se clonó automáticamente al crear un GitHub Codespace a partir del repositorio fork.
+Al pasar del fork al Codespace (workspace), GitHub realiza internamente el `git clone` y deja el repositorio disponible en la ruta `/workspaces/p1`.
+
+Por este motivo, no fue necesario ejecutar el comando manualmente, ya que el resultado es el mismo que si se hubiera hecho desde un entorno vacío.
+
+--------------------------------------------------
 
 2. git status
-Muestra el estado del repositorio, indicando en qué rama estamos y si hay cambios pendientes.
-Obtenemos:
+
+Este comando se utiliza para ver el estado del repositorio, indicando en qué rama se está trabajando y si existen cambios pendientes.
+
+Primer uso:
+Se utilizó al inicio para comprobar que el repositorio estaba en la rama principal (`main`), sincronizado con GitHub y sin cambios pendientes.
+Salida obtenida:
 On branch main
 Your branch is up to date with 'origin/main'.
 nothing to commit, working tree clean
+
+Segundo uso:
+Se utilizó después de crear una nueva rama para comprobar que el cambio de rama se había realizado correctamente.
+Salida obtenida:
+On branch feature/1
+nothing to commit, working tree clean
+
+--------------------------------------------------
+
+3. git add
+
+Se emplea para indicar a Git qué archivos se quieren guardar en el siguiente commit.
+Con él añadimos el archivo `git.txt` al área de preparación antes de confirmar los cambios.
+
+Comando ejecutado:
+git add git.txt
+
+--------------------------------------------------
+
+4. git commit
+
+Se usa para guardar de forma definitiva los cambios preparados en el repositorio local.
+Se utilizó para confirmar la creación del archivo `git.txt` con la explicación de los comandos Git.
+
+Comando ejecutado:
+git commit -m "Explicación de comandos Git"
+
+Salida obtenida:
+[main 6962812] Explicación de comandos Git
+ 1 file changed, 13 insertions(+)
+ create mode 100644 git.txt
+
+--------------------------------------------------
+
+5. git push
+
+Se utiliza para enviar los cambios guardados en el repositorio local al repositorio remoto en GitHub.
+En esta práctica se utilizó para subir el archivo `git.txt` al repositorio fork.
+
+Comando ejecutado:
+git push origin main
+
+--------------------------------------------------
+
+6. git checkout
+
+Se utiliza para cambiar de rama o crear una nueva rama.
+En esta práctica se creó una nueva rama para probar el comando y después se volvió a la rama principal.
+
+Comandos ejecutados:
+git checkout -b feature/1
+git checkout main
+
+Estos comandos permiten trabajar en una rama distinta sin modificar la rama principal.
+
+================================================================================================
+================================================================================================
+Terminal:
+
+@CristinaMolinaAlvarez ➜ /workspaces/p1 (main) $ pwd
+/workspaces/p1
+@CristinaMolinaAlvarez ➜ /workspaces/p1 (main) $ ls
+README.md
+@CristinaMolinaAlvarez ➜ /workspaces/p1 (main) $ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+@CristinaMolinaAlvarez ➜ /workspaces/p1 (main) $ nano git.txt
+@CristinaMolinaAlvarez ➜ /workspaces/p1 (main) $ git add git.txt
+@CristinaMolinaAlvarez ➜ /workspaces/p1 (main) $ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   git.txt
+
+@CristinaMolinaAlvarez ➜ /workspaces/p1 (main) $ git commit -m "Explicación de comandos Git"
+[main 6962812] Explicación de comandos Git
+ 1 file changed, 13 insertions(+)
+ create mode 100644 git.txt
+@CristinaMolinaAlvarez ➜ /workspaces/p1 (main) $ git push origin main
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 612 bytes | 612.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/CristinaMolinaAlvarez/p1
+   07720b5..6962812  main -> main
+@CristinaMolinaAlvarez ➜ /workspaces/p1 (main) $ git checkout -b feature/1
+Switched to a new branch 'feature/1'
+@CristinaMolinaAlvarez ➜ /workspaces/p1 (feature/1) $ git status
+On branch feature/1
+nothing to commit, working tree clean
+@CristinaMolinaAlvarez ➜ /workspaces/p1 (feature/1) $ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+@CristinaMolinaAlvarez ➜ /workspaces/p1 (main) $ 
+
