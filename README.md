@@ -27,7 +27,7 @@ su cultura y sus monumentos.
 Uno de los lugares más visitados es la **Fontana di Trevi**, donde es tradición lanzar
 una moneda para asegurar el regreso a la ciudad.
 
-![Fontana di Trevi](imagenes/fontana-trevi.jpg)
+![Fontana di Trevi](imagenes/fontana-di-trevi.jpg)
 
 ---
 
